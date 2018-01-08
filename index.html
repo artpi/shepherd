@@ -25,21 +25,6 @@
     		margin: 12px;
     	}
     </style>
-    <script>
-    	window.onload=function() {
-    		document.getElementById( 'generate_shepherd' ).onsubmit = function() { 
-    			var select = document.getElementById('culprit');
-    			var from = select.options[ select.selectedIndex ].value;
-    			select = document.getElementById('to');
-    			var to = select.options[ select.selectedIndex ].value;
-				var ratio = document.getElementById('ratio').value;
-
-				var url = from + '.html?to=' + to + '&ratio=' + ratio;
-				window.location.href= url;
-				return false;
-   			} 
-    	}
-    </script>
   </head>
   <body>
 	<div class="jumbotron" id='intro'>
@@ -50,6 +35,15 @@
 		<p>Your sheep mind opens Facebook, you end up in kindle. Get some quality content.</p>
 	</div>
 
+<div class="alert alert-warning" role="alert" style='display:none' id='android'>
+  Unfortunately, this does not work perfectly on Android yet. If you know how to make deep links work for Kindle or Pocket, <a href='https://github.com/artpi/shepherd/issues/1'>please solve this issue.</a>
+</div>
+
+<div style='display:none' id='desktop'>
+	<div class="alert alert-warning" role="alert">
+	  Open this page on your mobile phone📱 to install shepherd 🐶 .
+	</div>
+</div>
 
 <form style='margin: 20px' id='generate_shepherd'>
 	<h1>Install shepherd</h1>
@@ -78,5 +72,28 @@
 		<h4><a href='https://github.com/artpi/shepherd'>We're Open Source on Github</a></h4>
 	</div>
 
+    <script>
+    	document.addEventListener( "DOMContentLoaded", function(event) { 
+    		document.getElementById( 'generate_shepherd' ).onsubmit = function() { 
+    			var select = document.getElementById('culprit');
+    			var from = select.options[ select.selectedIndex ].value;
+    			select = document.getElementById('to');
+    			var to = select.options[ select.selectedIndex ].value;
+				var ratio = document.getElementById('ratio').value;
+
+				var url = from + '.html?to=' + to + '&ratio=' + ratio;
+				window.location.href= url;
+				return false;
+   			}
+   			if ( /android/i.test( navigator.userAgent ) ) {
+   				document.getElementById( 'android' ).style.display = 'block';
+   			}
+
+   			if ( ! /android/i.test( navigator.userAgent ) && ! /iphone/i.test( navigator.userAgent ) && ! /ipad/i.test( navigator.userAgent ) ) {
+   				document.getElementById( 'desktop' ).style.display = 'block';
+   			}
+		});
+
+    </script>
   </body>
 </html>
