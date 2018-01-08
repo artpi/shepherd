@@ -1,15 +1,15 @@
 <html>
-<title>Shepherd</title>
+<title>Facebook</title>
 <head>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-title" content="Facebook">
-	<link rel="apple-touch-icon" href="./icons/facebook.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Facebook">
+    <link rel="apple-touch-icon" href="./icons/facebook.png">
 </head>
 
 <body>
-	<div id='instructions' style='display:none'>
-		<h2>Shepherd</h2>
-        <p>This is a tool to reclaim your sanity. It will look like FB on your homescreen, but if you click it, Kindle app will open.</p>
+    <div id='instructions' style='display:none'>
+        <h2>Shepherd</h2>
+        <p>This is a tool to reclaim your sanity. It will look like FB on your homescreen, but if you click it, Some other app will open.</p>
         <h4>How to set it up?</h4>
         <ul>
             <li>Make sure you have kindle app installed</li>
@@ -20,23 +20,9 @@
             <li>Enjoy productivity</li>
         </ul>
 
-	</div>
-	<a id="button" href="kindle://"></a>
-    <script type="text/javascript">
-        if (window.navigator.standalone) {
-            var clickEvent = document.createEvent('MouseEvents')
-            clickEvent.initEvent('click', true, true)
-            setTimeout(function() {
-                button.dispatchEvent(clickEvent)
-            }, 25)
-        } else {
-            var instructions = document.getElementById("instructions")
-            instructions.style["display"] = ""
-            
-            var button = document.getElementById("button")
-            button.style["display"] = "none"
-        }
-    </script>
+    </div>
+    <a id="button" href="fb://"></a>
+    <script src="script.js?v=1.1"></script>
 </body>
 
 </html>

@@ -11,7 +11,6 @@ if (
         urlParams.get( 'rate' ) > 0 &&
         Math.floor( Math.random() * 100 ) < urlParams.get( 'rate' )
     ) {
-        button.setAttribute( 'href', 'fb://' );
     } else if ( urlParams.get( 'to' ) ) {
         //Where to redirect?
         button.setAttribute( 'href', urlParams.get( 'to' ) + '://' );
