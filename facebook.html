@@ -7,12 +7,25 @@
 </head>
 
 <body>
-	Test
-	<script>
-		window.setTimeout( function() {
-			window.location.href = 'kindle://';
-		}, 1000 ); 
-	</script>
+	<div id='instructions' style='display:none'>
+		These are instructions. Blah blah, save to homescreen.
+	</div>
+	<a id="button" href="kindle://"></a>
+    <script type="text/javascript">
+        if (window.navigator.standalone) {
+            var clickEvent = document.createEvent('MouseEvents')
+            clickEvent.initEvent('click', true, true)
+            setTimeout(function() {
+                button.dispatchEvent(clickEvent)
+            }, 25)
+        } else {
+            var instructions = document.getElementById("instructions")
+            instructions.style["display"] = ""
+            
+            var button = document.getElementById("button")
+            button.style["display"] = "none"
+        }
+    </script>
 </body>
 
 </html>
