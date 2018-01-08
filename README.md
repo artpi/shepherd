@@ -1,8 +1,8 @@
-# Shepherd
+# 🐶 Shepherd
 
 Shepherd displays Facebook / Twitter app icon on your phone but opens Kindle, Pocket or other productive app.
 
-### [http://shepherd.artpi.net/](Demo, features, installation)
+### [Demo, features, installation](http://shepherd.artpi.net/)
 
 ## Why?
 
