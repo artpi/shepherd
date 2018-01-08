@@ -43,6 +43,9 @@
 	<div class="alert alert-warning" role="alert">
 	  Open this page on your mobile phone📱 to install shepherd 🐶 .
 	</div>
+
+	<div style="margin-top:24px;text-align:center" id='mov'>
+	</div>
 </div>
 
 <form style='margin: 20px' id='generate_shepherd'>
@@ -91,6 +94,7 @@
 
    			if ( ! /android/i.test( navigator.userAgent ) && ! /iphone/i.test( navigator.userAgent ) && ! /ipad/i.test( navigator.userAgent ) ) {
    				document.getElementById( 'desktop' ).style.display = 'block';
+   				document.getElementById( 'mov' ).innerHTML = '<iframe width="600" height="600" src="https://www.youtube.com/embed/AVt6SpKzMgE?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>';
    			}
 		});
 
