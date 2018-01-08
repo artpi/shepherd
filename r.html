@@ -1,5 +1,5 @@
 <html>
-<title>Shepherd</title>
+<title>Facebook</title>
 <head>
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="Facebook">
@@ -24,7 +24,11 @@
 	<a id="button" href="kindle://"></a>
     <script type="text/javascript">
         
-        if ( window.navigator.standalone ) {
+        if (
+            window.navigator.standalone ||
+            window.matchMedia( '(display-mode: standalone)' )
+
+        ) {
             urlParams = new URLSearchParams( window.location.search );
             // This will non - deterministicly redirect to FB itself. Maybe sometimes we want to go there?
             if (
