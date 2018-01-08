@@ -23,7 +23,7 @@
 	</div>
 	<a id="button" href="kindle://"></a>
     <script type="text/javascript">
-        
+        var button = document.getElementById( "button" );
         if (
             window.navigator.standalone ||
             window.matchMedia( '(display-mode: standalone)' )
@@ -36,10 +36,10 @@
                 urlParams.get( 'rate' ) > 0 &&
                 Math.floor( Math.random() * 100 ) < urlParams.get( 'rate' )
             ) {
-                document.getElementById( 'button' ).setAttribute( 'href', 'fb://' );
+                button.setAttribute( 'href', 'fb://' );
             } else if ( urlParams.get( 'to' ) ) {
                 //Where to redirect?
-                document.getElementById( 'button' ).setAttribute( 'href', urlParams.get( 'to' ) + '://' );
+                button.setAttribute( 'href', urlParams.get( 'to' ) + '://' );
             }
 
             // Props IFTTT team for this code:
@@ -51,8 +51,6 @@
         } else {
             var instructions = document.getElementById( "instructions" );
             instructions.style["display"] = ""
-            
-            var button = document.getElementById( "button" );
             button.style["display"] = "none";
         }
     </script>
