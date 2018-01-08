@@ -26,7 +26,7 @@
         var button = document.getElementById( "button" );
         if (
             window.navigator.standalone ||
-            window.matchMedia( '(display-mode: standalone)' )
+            ( /android/i.test( navigator.userAgent ) && window.matchMedia( '(display-mode: standalone)' ) )
 
         ) {
             urlParams = new URLSearchParams( window.location.search );
