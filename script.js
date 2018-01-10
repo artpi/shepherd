@@ -1,4 +1,31 @@
 var button = document.getElementById( "button" );
+
+var redirectOptions = {
+    kindle: {
+        android: 'kindle://',
+        ios: 'kindle://'
+    },
+    pocket: {
+        android: 'http://getpocket.com/app/',
+        ios: 'pocket://'
+    },
+    facebook: {
+        android: 'fb://now',
+        ios: 'fb://'
+    }
+}
+function getRedirectUri( app ) {
+    if ( ! app ) {
+        return '';
+    }
+    var system = 'ios';
+
+    if( /android/i.test( navigator.userAgent ) ) {
+        system = 'android';
+    }
+    return redirectOptions[ app ] ? redirectOptions[ app ][ system ] : null;
+}
+
 if (
     window.navigator.standalone ||
     ( /android/i.test( navigator.userAgent ) && window.matchMedia( '(display-mode: standalone)' ) )
@@ -13,7 +40,7 @@ if (
     ) {
     } else if ( urlParams.get( 'to' ) ) {
         //Where to redirect?
-        button.setAttribute( 'href', urlParams.get( 'to' ) + '://' );
+        button.setAttribute( 'href', getRedirectUri( urlParams.get( 'to' ) ) );
     }
 
     // Props IFTTT team for this code:
