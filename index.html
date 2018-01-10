@@ -35,10 +35,6 @@
 		<p>Your sheep mind opens Facebook, you end up in kindle. Get some quality content.</p>
 	</div>
 
-<div class="alert alert-warning" role="alert" style='display:none' id='android'>
-  Unfortunately, this does not work perfectly on Android yet. If you know how to make deep links work for Kindle or Pocket, <a href='https://github.com/artpi/shepherd/issues/1'>please solve this issue.</a>
-</div>
-
 <div style='display:none' id='desktop'>
 	<div class="alert alert-warning" role="alert">
 	  Open this page on your mobile phone📱 to install shepherd 🐶 .
@@ -87,9 +83,6 @@
 				var url = from + '.html?to=' + to + '&ratio=' + ratio;
 				window.location.href= url;
 				return false;
-   			}
-   			if ( /android/i.test( navigator.userAgent ) ) {
-   				document.getElementById( 'android' ).style.display = 'block';
    			}
 
    			if ( ! /android/i.test( navigator.userAgent ) && ! /iphone/i.test( navigator.userAgent ) && ! /ipad/i.test( navigator.userAgent ) ) {
