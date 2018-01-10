@@ -4,6 +4,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Shepherd - control your sheep brain" />
+    <meta property="og:description" content="App that pretends to be Facebook / Twitter and reroutes you to a productive app. Open Source." />
+    <meta property="og:image" content="./images/logo.png" />
     <title>Shepherd - regain control over your sheep mind</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -92,5 +95,15 @@
 		});
 
     </script>
+    <!-- ONly track installations. Opens are not tracked. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112248504-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-112248504-1');
+    </script>
+
   </body>
 </html>
