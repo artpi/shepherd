@@ -27,8 +27,12 @@ function getRedirectUri( app ) {
 }
 
 if (
-    window.navigator.standalone ||
-    ( /android/i.test( navigator.userAgent ) && window.matchMedia( '(display-mode: standalone)' ) )
+    !! window.navigator.standalone ||
+    (
+        !! /android/i.test( navigator.userAgent )&&
+        !! window.matchMedia( '(display-mode: standalone)') &&
+        !! window.matchMedia( '(display-mode: standalone)').matches
+    )
 
 ) {
     urlParams = new URLSearchParams( window.location.search );
