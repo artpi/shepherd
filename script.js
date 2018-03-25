@@ -9,6 +9,10 @@ var redirectOptions = {
         android: 'http://getpocket.com/app/',
         ios: 'pocket://'
     },
+    medium: {
+        android: 'medium://',
+        ios: 'medium://'
+    },
     facebook: {
         android: 'fb://now',
         ios: 'fb://'
