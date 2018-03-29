@@ -1,113 +1,118 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta property="og:title" content="Shepherd - control your sheep brain" />
-    <meta property="og:description" content="App that pretends to be Facebook / Twitter and reroutes you to a productive app. Open Source." />
+    <meta property="og:description" content="App that pretends to be Facebook / Twitter and reroutes you to a productive app. Open Source."
+    />
     <meta property="og:image" content="http://shepherd.artpi.net/icons/logo.png" />
     <title>Shepherd - regain control over your sheep mind</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+        crossorigin="anonymous">
 
     <style>
-    	#intro {
-    		background-image: linear-gradient(120deg, #155799, #159957);
-    		color: #fff;
-    	}
-    	#intro p {
-    		opacity: 0.7;
-    	}
-    	#intro h1 {
-    		text-align: center;
-    	}
-    	#logo {
-    		text-align:center;
-    		font-size:84px;
-    		margin: 12px;
-    	}
+        #intro {
+            background-image: linear-gradient(120deg, #155799, #159957);
+        }
+
+        #intro p {
+            opacity: 0.7;
+        }
+
+        #logo {
+            font-size: 84px;
+        }
     </style>
-  </head>
-  <body>
-	<div class="jumbotron" id='intro'>
-		<h1 class="display-4">Shepherd</h1>
-		<div id='logo'>🐶</div>
-		<p class="lead">Are apps like Facebook or Twitter addictive for you? Do you find yourself scrolling mindlessly?</p>
-		<p>Shepherd puts an app icon on your home screen that redirects to another, productive app</p>
-		<p>Your sheep mind opens Facebook, you end up in kindle. Get some quality content.</p>
-	</div>
+</head>
 
-  <div class="alert alert-warning" role="alert" style='text-align: center'>
-    <a style='text-decoration: underline' href='https://www.producthunt.com/posts/shepherd-2'>Hey 👋 ! We're on Product Hunt! 🚀 🙏</a>
-  </div>
+<body>
+    <div class="jumbotron text-center text-white" id='intro'>
+        <h1 class="display-4">Shepherd</h1>
+        <div id='logo'>🐶</div>
+        <p class="lead">Are apps like Facebook or Twitter addictive for you? Do you find yourself scrolling mindlessly?</p>
+        <p>Shepherd puts an app icon on your home screen that redirects to another, more productive app.</p>
+        <p>Your sheep mind opens Facebook, you end up in Kindle. Get some quality content.</p>
+    </div>
 
-<div style='display:none' id='desktop'>
-	<div class="alert alert-warning" role="alert">
-	  Open this page on your mobile phone📱 to install shepherd 🐶 .
-	</div>
 
-	<div style="margin-top:24px;text-align:center" id='mov'>
-	</div>
-</div>
+    <div class="alert alert-warning text-center" role="alert">
+        <a href='https://www.producthunt.com/posts/shepherd-2'>Hey 👋! We're on Product Hunt! 🚀 🙏</a>
+    </div>
 
-<form style='margin: 20px' id='generate_shepherd'>
-	<h1>Install shepherd</h1>
-  <div class="form-group">
-    <label for="culprit">App to replace</label>
-    <select class="form-control form-control-lg" id="culprit">
-      <option value='facebook'>Facebook</option>
-      <option value='twitter'>Twitter</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="to">App to open instead</label>
-    <select class="form-control form-control-lg" id="to">
-      <option value='kindle'>Kindle</option>
-      <option value='pocket'>Pocket</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="ratio">Percent of times this icon should open default app. If you put 30 here, 30% times this will open Facebook.</label>
-    <input type="number" class="form-control" id="ratio" placeholder="% of times original app should be opened" min="0" value="0" max="100">
-  </div>
-  <button type="submit" class="btn btn-primary">Install!</button>
-</form>
+    <div class="text-center" style='display: none' id='desktop'>
+        <div class="alert alert-warning" role="alert">
+            Open this page on your mobile phone 📱 to install Shepherd 🐶.
+        </div>
 
-	<div class="jumbotron">
-		<h4><a href='https://github.com/artpi/shepherd'>We're Open Source on Github</a></h4>
-	</div>
+        <div class="text-center mt-2" id='mov'>
+        </div>
+    </div>
+
+    <form class="m-2" id='generate_shepherd'>
+        <h1>Install shepherd</h1>
+        <div class="form-group">
+            <label for="culprit">App to replace</label>
+            <select class="form-control form-control-lg" id="culprit">
+                <option value='facebook'>Facebook</option>
+                <option value='twitter'>Twitter</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="to">App to open instead</label>
+            <select class="form-control form-control-lg" id="to">
+                <option value='kindle'>Kindle</option>
+                <option value='pocket'>Pocket</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="ratio">How often the default app should open. If you put 30 here, Facebook will open 30% of the time.</label>
+            <input type="number" class="form-control" id="ratio" placeholder="% of times original app should be opened" min="0" value="0"
+                max="100">
+        </div>
+        <button type="submit" class="btn btn-primary">Install!</button>
+    </form>
+
+    <div class="jumbotron">
+        <h4>
+            <a href='https://github.com/artpi/shepherd'>We're Open Source on GitHub</a>
+        </h4>
+    </div>
 
     <script>
-    	document.addEventListener( "DOMContentLoaded", function(event) { 
-    		document.getElementById( 'generate_shepherd' ).onsubmit = function() { 
-    			var select = document.getElementById('culprit');
-    			var from = select.options[ select.selectedIndex ].value;
-    			select = document.getElementById('to');
-    			var to = select.options[ select.selectedIndex ].value;
-				var ratio = document.getElementById('ratio').value;
+        document.addEventListener("DOMContentLoaded", function (event) {
+            document.getElementById('generate_shepherd').onsubmit = function () {
+                var select = document.getElementById('culprit');
+                var from = select.options[select.selectedIndex].value;
+                select = document.getElementById('to');
+                var to = select.options[select.selectedIndex].value;
+                var ratio = document.getElementById('ratio').value;
 
-				var url = from + '.html?to=' + to + '&rate=' + ratio;
-				window.location.href= url;
-				return false;
-   			}
+                var url = from + '.html?to=' + to + '&rate=' + ratio;
+                window.location.href = url;
+                return false;
+            }
 
-   			if ( ! /android/i.test( navigator.userAgent ) && ! /iphone/i.test( navigator.userAgent ) && ! /ipad/i.test( navigator.userAgent ) ) {
-   				document.getElementById( 'desktop' ).style.display = 'block';
-   				document.getElementById( 'mov' ).innerHTML = '<iframe width="600" height="600" src="https://www.youtube.com/embed/AVt6SpKzMgE?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>';
-   			}
-		});
+            if (! /android/i.test(navigator.userAgent) && ! /iphone/i.test(navigator.userAgent) && ! /ipad/i.test(navigator.userAgent)) {
+                document.getElementById('desktop').style.display = 'block';
+                document.getElementById('mov').innerHTML = '<iframe width="600" height="600" src="https://www.youtube.com/embed/AVt6SpKzMgE?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>';
+            }
+        });
 
     </script>
     <!-- ONly track installations. Opens are not tracked. -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112248504-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'UA-112248504-1');
+        gtag('config', 'UA-112248504-1');
     </script>
 
-  </body>
+</body>
+
 </html>
